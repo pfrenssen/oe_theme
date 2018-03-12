@@ -5,7 +5,7 @@
 
 # Define paths.
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT=$(realpath ${SCRIPT_PATH}/../..)
+PROJECT_ROOT=$(readlink -f ${SCRIPT_PATH}/../..)
 RELEASE_PATH=${PROJECT_ROOT}/oe_theme
 
 # Get the release number.

@@ -25,7 +25,7 @@ rm composer.lock
 
 # Install production dependencies.
 # Todo: Not needed if we exclude the vendor folder.
-sudo chmod a+w build/
+sudo chmod -R a+w build/
 rm -rf build/
 rm -rf vendor/
 docker-compose exec -u web web composer install --no-dev

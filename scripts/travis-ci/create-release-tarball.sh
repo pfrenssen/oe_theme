@@ -5,8 +5,11 @@
 
 # Define paths.
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo ${SCRIPT_PATH}
 PROJECT_ROOT=$(readlink -f ${SCRIPT_PATH}/../..)
+echo ${PROJECT_ROOT}
 RELEASE_PATH=${PROJECT_ROOT}/oe_theme
+echo ${RELEASE_PATH}
 
 # Get the release number.
 VERSION=$(git describe --tags)
@@ -15,12 +18,14 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+cd ${PROJECT_ROOT}
+
 # Create release folder.
 mkdir ${RELEASE_PATH}
 
 # Install production dependencies.
 # Todo: Not needed if we exclude the vendor folder.
-composer install --no-dev
+docker-compose exec -u web web composer install --no-dev
 
 # Copy production files.
 # Todo: exclude the vendor folder?

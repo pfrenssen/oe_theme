@@ -4,9 +4,7 @@
 # instances. This package excludes all tests and development tools.
 
 # Define paths.
-SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-echo ${SCRIPT_PATH}
-PROJECT_ROOT=$(readlink -f ${SCRIPT_PATH}/../..)
+PROJECT_ROOT=$(pwd)
 echo ${PROJECT_ROOT}
 RELEASE_PATH=${PROJECT_ROOT}/oe_theme
 echo ${RELEASE_PATH}

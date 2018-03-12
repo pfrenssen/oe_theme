@@ -22,6 +22,8 @@ mkdir ${RELEASE_PATH}
 # Undo vandalism to composer.json.
 git checkout composer.json
 rm composer.lock
+rm -r build/
+rm -r vendor/
 
 # Install production dependencies.
 # Todo: Not needed if we exclude the vendor folder.

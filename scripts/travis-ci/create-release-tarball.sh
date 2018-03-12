@@ -5,9 +5,7 @@
 
 # Define paths.
 PROJECT_ROOT=$(pwd)
-echo ${PROJECT_ROOT}
 RELEASE_PATH=${PROJECT_ROOT}/oe_theme
-echo ${RELEASE_PATH}
 
 # Get the release number.
 VERSION=$(git describe --tags)

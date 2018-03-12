@@ -19,6 +19,10 @@ cd ${PROJECT_ROOT}
 # Create release folder.
 mkdir ${RELEASE_PATH}
 
+# Undo vandalism to composer.json.
+git checkout composer.json
+rm composer.lock
+
 # Install production dependencies.
 # Todo: Not needed if we exclude the vendor folder.
 docker-compose exec -u web web composer install --no-dev
